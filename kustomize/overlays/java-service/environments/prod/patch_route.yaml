@@ -1,3 +1,0 @@
-- op: add
-  path: /spec/host
-  value: prod-route-java-service.apps-crc.testing

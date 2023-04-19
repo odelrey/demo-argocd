@@ -1,9 +1,9 @@
 - op: replace
   path: /metadata/name
-  value: java-service
+  value: java-service-1-1
 - op: replace
   path: /spec/template/metadata/labels/app
-  value: java-service
+  value: java-service-1-1
 - op: add
   path: "/spec/template/spec/containers/0/envFrom"
   value:

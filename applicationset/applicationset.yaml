@@ -13,17 +13,17 @@ spec:
             - app: java-service-2
       - list:
           elements:
-            - cluster: test
-              url: https://api.crc.testing:6443
+            - cluster: dev
+              url: https://kubernetes.default.svc
   template:
     metadata:
       name: "{{app}}-{{cluster}}"
     spec:
-      project: "java-core'
+      project: "project1"
       source:
         repoURL: https://github.com/odelrey/demo-argocd
         targetRevision: HEAD
         path: kustomize/overlays/{{app}}/environments/{{cluster}}
       destination:
         server: '{{url}}'
-        namespace: java-service-{{cluster}}
+        namespace: '{{app}}'

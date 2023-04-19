@@ -1,7 +1,6 @@
 - op: replace
   path: /metadata/name
-  value: java-service
+  value: java-service-1-1
 - op: replace
   path: /spec/selector/matchLabels/app
-  value: java-service
-
+  value: java-service-1-1

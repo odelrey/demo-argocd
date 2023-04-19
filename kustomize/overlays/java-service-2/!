@@ -1,0 +1,16 @@
+- op: replace
+  path: /metadata/name
+  value: java-service-2-2
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: java-service-2-2
+- op: add
+  path: "/spec/template/spec/containers/0/envFrom"
+  value:
+  - configMapRef:
+      name: application.properties
+- op: add
+  path: "/spec/template/spec/containers/0/envFrom/-"
+  value:
+   secretRef:
+      name: java-core-db-credentials

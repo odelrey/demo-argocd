@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: java-service-2-2
+- op: replace
+  path: /spec/to/name
+  value: java-service-2-2

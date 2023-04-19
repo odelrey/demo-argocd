@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-api
+spec:
+  ports:
+    - name: app
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: metrics
+      protocol: TCP
+      port: 9799
+      targetPort: 9799
+  selector:
+    app: service-api
+  type: ClusterIP
+

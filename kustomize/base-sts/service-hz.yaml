@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-hz
+spec:
+  ports:
+  - port: 5701
+    protocol: TCP
+    name: hazelcasat
+  selector:
+    app: service-hz
+  sessionAffinity: None
+  type: ClusterIP
+

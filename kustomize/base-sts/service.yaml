@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service
+spec:
+  ports:
+  - port: 8081
+    targetPort: 8081
+    protocol: TCP
+    name: mgmnt
+  selector:
+    app: service
+  sessionAffinity: None
+  type: ClusterIP
+

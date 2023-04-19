@@ -9,7 +9,8 @@ spec:
       generators:
       - list:
           elements:
-            - app: java-app
+            - app: java-service-1
+            - app: java-service-2
       - list:
           elements:
             - cluster: test
@@ -25,4 +26,4 @@ spec:
         path: kustomize/overlays/{{app}}/environments/{{cluster}}
       destination:
         server: '{{url}}'
-        namespace: java-app-{{cluster}}
+        namespace: java-service-{{cluster}}

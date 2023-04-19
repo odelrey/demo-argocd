@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: java-app
+  namespace: openshift-gitops
+spec:
+  generators:
+  - matrix:
+      generators:
+      - list:
+          elements:
+            - app: java-app
+      - list:
+          elements:
+            - cluster: test
+              url: https://api.crc.testing:6443
+  template:
+    metadata:
+      name: "{{app}}-{{cluster}}"
+    spec:
+      project: "java-core'
+      source:
+        repoURL: https://github.com/odelrey/demo-argocd
+        targetRevision: HEAD
+        path: kustomize/overlays/{{app}}/environments/{{cluster}}
+      destination:
+        server: '{{url}}'
+        namespace: java-app-{{cluster}}

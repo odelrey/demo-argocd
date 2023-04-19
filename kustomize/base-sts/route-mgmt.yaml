@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: route-mgmt
+spec:
+  to:
+    kind: Service
+    name: service-mgmt
+    weight: 100
+  port:
+    targetPort: 8081
+  tls:
+    termination: edge
+  wildcardPolicy: None

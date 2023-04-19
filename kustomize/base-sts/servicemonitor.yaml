@@ -1,0 +1,14 @@
+kind: ServiceMonitor
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: servicemonitor
+spec:
+  endpoints:
+  - interval: 10s
+    port: metrics
+    scheme: http
+    path: /
+  selector:
+    matchLabels:
+      app: servicemonitor
+
